@@ -1,0 +1,14 @@
+<h1>Top Players for crime</h1>
+<table>
+  <th>Name</th>
+  <th>Arrest Count</th>
+  <tr *ngFor="let element of dataSource">
+    <td>
+      {{element.Name}}
+    </td>
+    <td>{{element.arrest_count}}</td>
+  </tr>
+  <tr *ngIf="!dataSource">
+    No data to display
+  </tr>
+</table>

@@ -1,0 +1,15 @@
+<h1>Top crimes</h1>
+<table>
+  <th>Crime Category</th>
+  <th>Arrest Count</th>
+  <tr *ngFor="let element of dataSource">
+  <td>
+    <a [routerLink]="['/top-players', element.Category]">{{element.Category}}</a>
+  </td>
+    <td>{{element.arrest_count}}</td>
+  </tr>
+  <tr *ngIf="!dataSource">
+    No data to display
+  </tr>
+</table>
+
