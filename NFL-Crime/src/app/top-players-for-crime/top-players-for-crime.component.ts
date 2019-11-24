@@ -16,10 +16,12 @@ baseUrl = 'http://nflarrest.com/api/v1/crime/topPlayers/';
   dataSource = [];
   constructor(private httpclient: HttpClient, private route: ActivatedRoute) { }
 
+  // get top players for crime
   getTopCrimes(url): Observable<Any> {
     return this.httpclient.get(url);
   }
 
+  // on page load
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     this.getTopCrimes(this.baseUrl + id).subscribe(data => {

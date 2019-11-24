@@ -21,10 +21,12 @@ export class TopCrimesComponent implements OnInit {
 
   constructor(private httpclient: HttpClient) { }
 
+  // fetch top crimes NFLArrest APIs
   getTopCrimes(url): Observable<Any> {
     return this.httpclient.get(url);
   }
 
+  // on page load
   ngOnInit() {
     this.getTopCrimes(this.baseUrl).subscribe(data => {
       this.dataSource = data;
